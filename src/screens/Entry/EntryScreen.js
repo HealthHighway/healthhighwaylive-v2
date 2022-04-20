@@ -11,13 +11,31 @@ class EntryScreen extends React.Component {
 
     componentDidMount() {
         if(this.props._id){
-            if((this.props.bio && typeof this.props.bio == "object" && Object.keys(this.props.bio).length) || !this.props.showBioToFill){
+            if(!this.props.name){
+                this.props.navigation.navigate("UserInfoScreen")
+            }
+            else if((this.props.bio && typeof this.props.bio == "object" && Object.keys(this.props.bio).length) || !this.props.showBioToFill){
                 this.props.navigation.navigate("HomeStack", { screen : "BottomTabNavigator" })
             }else{
                 this.props.navigation.navigate("BioOnEntry")
             }
         }else{
             SplashScreen.hide()
+        }
+    }
+
+    navigationHandler(){
+        if(this.props._id){
+            if(!this.props.name){
+                this.props.navigation.navigate("UserInfoScreen")
+            }
+            else if((this.props.bio && typeof this.props.bio == "object" && Object.keys(this.props.bio).length) || !this.props.showBioToFill){
+                this.props.navigation.navigate("HomeStack", { screen : "BottomTabNavigator" })
+            }else{
+                this.props.navigation.navigate("BioOnEntry")
+            }
+        }else{
+            this.props.navigation.navigate("SignUpScreen")
         }
     }
 
@@ -51,7 +69,7 @@ class EntryScreen extends React.Component {
                               <BtnWithoutImage 
                                 onPress = {() => {
                                     MixpanelInstance.track("get_started_app")
-                                    this.props.navigation.navigate("SignUpScreen")
+                                    this.navigationHandler()
                                 }}
                                  title="Get Started"
                                />
@@ -67,6 +85,7 @@ class EntryScreen extends React.Component {
 const mapStateToProps = state => {
     console.log("from entry screen>>>", state.UserReducer._id, state.UserReducer.bio, state.UserReducer.showBioToFill)
     return {
+        name : state.UserReducer.name,
         _id : state.UserReducer._id,
         bio : state.UserReducer.bio,
         showBioToFill : state.UserReducer.showBioToFill,

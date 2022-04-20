@@ -249,6 +249,11 @@ class GroupDetailScreen extends React.Component {
 
     bookGroupSession = (sessionCount) => {
 
+        if(!this.state.isDateChosen){
+            ToastAndroid.show("Choose the Starting Date First!!", ToastAndroid.SHORT)
+            return;
+        }
+
         MixpanelInstance.track("book_group_clicked")
 
         this.setState({ loading: true, showBookingStatus : false, bookedSuccess : false}, async () => {

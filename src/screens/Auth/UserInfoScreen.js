@@ -8,6 +8,7 @@ import Loading from '../../components/atoms/Loading';
 import { scale } from '../../theme/metric';
 import { addName } from '../../store/actions/user.action'
 import { MixpanelInstance } from '../../utils/analytics.util';
+import SplashScreen from 'react-native-splash-screen';
 
 class UserInfoScreen extends React.Component {
 
@@ -16,6 +17,10 @@ class UserInfoScreen extends React.Component {
         width : Dimensions.get('screen').width,
         height : Dimensions.get('screen').height,
         name : ''
+    }
+
+    componentDidMount() {
+        SplashScreen.hide()
     }
 
     handleNameSubmit = () => {

@@ -15,18 +15,7 @@ class ProfileScreen extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevProps._id != this.props._id){
-            if(!this.props._id){
-                this.setState({ loading : true }, () => {
-                    setTimeout(() => {
-                        this.props.logout()
-                        this.setState({ loading : false }, () => {
-                            this.props.navigation.navigate("LoginFlow", { screen : "EntryScreen" })
-                        })
-                    }, 2000)
-                })
-            }
-        }else if(prevProps.gmailAddress != this.props.gmailAddress){
+        if(prevProps.gmailAddress != this.props.gmailAddress){
             ToastAndroid.show("Gmail Address Updated Succesfully", ToastAndroid.SHORT);
             this.setState({ loading : false })
         }
@@ -39,8 +28,8 @@ class ProfileScreen extends React.Component {
                 <View style={{height:scale(30)}} />
                 <ScrollView>
                     <View style={{backgroundColor:'white', marginHorizontal:scale(20), flexDirection:'row'}} >
-                        <View style={{...styles.rowCenter, backgroundColor:'white', borderRadius:scale(100), overflow: 'hidden', width:scale(100), height:scale(100), ...styles.shadowStyle, padding:scale(10)}} >
-                            <Image source={!this.props.photo || this.props.photo.length==0?require('../../assets/images/logo-transparent.png'):{ uri : this.props.photo }} resizeMode="contain" style={{height:'100%', width:'100%', borderRadius:scale(100)}} />
+                        <View style={{...styles.rowCenter, backgroundColor:'white', borderRadius:scale(100), overflow: 'hidden', width:scale(100), height:scale(100), ...styles.shadowStyle}} >
+                            <Image source={!this.props.profilePhotoUrl || this.props.profilePhotoUrl.length==0?require('../../assets/images/logo-transparent.png'):{ uri : this.props.profilePhotoUrl }} resizeMode="stretch" style={{height:'100%', width:'100%', borderRadius:scale(100)}} />
                         </View>
                         <View style={{width:scale(20), backgroundColor:'white'}} />
                         <View style={{flex:2, backgroundColor:'white'}} >
@@ -156,6 +145,7 @@ const mapStateToProps = state => {
         name : state.UserReducer.name,
         gmailAddress : state.UserReducer.gmailAddress,
         phoneNumber : state.UserReducer.phoneNumber,
+        profilePhotoUrl : state.UserReducer.profilePhotoUrl
     }
 }
 
