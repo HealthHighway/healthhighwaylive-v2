@@ -31,7 +31,7 @@ class BlogPreview extends React.Component {
                         <Text allowFontScaling={false} style={{color:'#555B5D',fontFamily:'Montserrat-Semibold',fontSize:scale(14), marginLeft:scale(10)}}>By {this.props.author}</Text>
                         <Text allowFontScaling={false} style={{color:'#B8B5B5',fontFamily:'Montserrat-Regular',fontSize:scale(10), marginLeft:scale(10)}}>Published on {new Date(this.props.createdAt).toDateString()}</Text>
                     </View>
-                    <Pressable onPress={() => console.log("dshajdhsajkhdfk")} style={{width:scale(40), backgroundColor:'white', borderRadius:scale(100), overflow:'hidden', justifyContent:'center', alignItems:'center'}} >
+                    <Pressable onPress={() => this.props.handleSharePress()} style={{width:scale(40), backgroundColor:'white', borderRadius:scale(100), overflow:'hidden', justifyContent:'center', alignItems:'center'}} >
                         <Image source={require('../../../../assets/images/share.png')} resizeMode="contain" style={{height:'60%', width:'60%'}} />
                     </Pressable>
                 </View>

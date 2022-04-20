@@ -83,7 +83,7 @@ class OtpScreen extends React.Component {
         
         if(!this.state.valid)
         {
-            ToastAndroid.show("Please 6 digit OTP", ToastAndroid.SHORT);
+            ToastAndroid.show("Please enter 6 digit OTP", ToastAndroid.SHORT);
         }
         else
         {
@@ -109,7 +109,7 @@ class OtpScreen extends React.Component {
                 </View>
                 <View style={{height:scale(50), backgroundColor:'white',paddingHorizontal:scale(30), ...styles.colCenter}} >
                     <Text allowFontScaling={false} style={{color:'#716E6E',fontFamily:'Montserrat-Medium',fontSize:scale(14)}}>We have sent you a verification code to</Text>
-                    <Text allowFontScaling={false} style={{color:'#716E6E',fontFamily:'Montserrat-Medium',fontSize:scale(14)}}>{this.props.testPhoneNumber}</Text>
+                    <Text allowFontScaling={false} style={{color:'#4ca9ee',fontFamily:'Montserrat-Medium',fontSize:scale(14), marginTop:scale(5)}}>{this.props.phoneNumber}</Text>
                 </View>
                 <View style={{height:scale(30)}}></View>
                 <View style={{height:scale(80),borderWidth:0}}>

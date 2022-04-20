@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {View, Text, FlatList, ScrollView, Image, ActivityIndicator} from 'react-native'
+import {View, Text, FlatList, ScrollView, Image, ActivityIndicator, Share} from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { scale } from '../../../theme/metric';
 import RadioBtnWithHeight from '../../../components/atoms/RadioBtnWithHeight';
@@ -19,28 +19,37 @@ const BlogScreen = (props) => {
     const [refreshing, setRefreshing] = useState(false)
     const [hasFirstTriedBeforeShowingNoData, setHasFirstTriedBeforeShowingNoData] = useState(false)
     const [loading, setLoading] = useState(false)
-    
-    useFocusEffect(
-        React.useCallback(() => {
-            setPage(1)
-            setBlogs([])
-            setRefreshing(false)
-            setHasFirstTriedBeforeShowingNoData(false)
-            setLoading(true)
-            loadBlogsOnFocusOrRefreshOrFilterChange()
-        }, [])
-    )
 
-    useFocusEffect(
-        React.useCallback(() => {
-            setPage(1)
-            setBlogs([])
-            setRefreshing(false)
-            setHasFirstTriedBeforeShowingNoData(false)
-            setLoading(true)
-            loadBlogsOnFocusOrRefreshOrFilterChange()
-        }, [props.selectedFilterId])
-    )
+    useEffect(() => {
+        setPage(1)
+        setBlogs([])
+        setRefreshing(false)
+        setHasFirstTriedBeforeShowingNoData(false)
+        setLoading(true)
+        loadBlogsOnFocusOrRefreshOrFilterChange()
+    }, [props.selectedFilterId])
+    
+    // useFocusEffect(
+    //     React.useCallback(() => {
+    //         setPage(1)
+    //         setBlogs([])
+    //         setRefreshing(false)
+    //         setHasFirstTriedBeforeShowingNoData(false)
+    //         setLoading(true)
+    //         loadBlogsOnFocusOrRefreshOrFilterChange()
+    //     }, [])
+    // )
+
+    // useFocusEffect(
+    //     React.useCallback(() => {
+    //         setPage(1)
+    //         setBlogs([])
+    //         setRefreshing(false)
+    //         setHasFirstTriedBeforeShowingNoData(false)
+    //         setLoading(true)
+    //         loadBlogsOnFocusOrRefreshOrFilterChange()
+    //     }, [props.selectedFilterId])
+    // )
 
     const loadBlogsOnFocusOrRefreshOrFilterChange =  async() => {
         try{
@@ -112,6 +121,21 @@ const BlogScreen = (props) => {
         }
     }
 
+    const handleSharePress = async (path, _id) => {
+        try {
+            const result = await Share.share({
+              message : `https://blogs.healthhighway.co.in/mobile/blogs/${path}/${_id}`,
+              title : "Share the blogs with your friends and family"
+            })
+            if (result.action === Share.sharedAction) {
+                MixpanelInstance.track("blog_share")
+            } else if (result.action === Share.dismissedAction) {
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <View style={{flex:1, backgroundColor:"#fff"}} >
 
@@ -133,6 +157,7 @@ const BlogScreen = (props) => {
                 renderItem={({item}) => {
                     return (
                         <BlogPreview
+                            handleSharePress={() => handleSharePress(item.path, item._id)}
                             thumbnailImage={item.thumbnailImage}
                             author={item.author}
                             authorImage={item.authorImage}
@@ -140,7 +165,7 @@ const BlogScreen = (props) => {
                             createdAt={item.createdAt}
                             onPress={() => {
                                 MixpanelInstance.track("explore_blog_detail")
-                                props.navigation.navigate("BlogDetailScreen")
+                                props.navigation.navigate("BlogDetailScreen", { path : item.path, _id : item._id })
                             }}
                         />
                     )

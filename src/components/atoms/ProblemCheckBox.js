@@ -6,7 +6,7 @@ const ProblemCheckBox = (props) => {
     return (
         <TouchableOpacity 
             onPress={() => props.onPress(props.myProblem)} 
-            activeOpacity={0.90} 
+            activeOpacity={0.5} 
             style={{height:scale(55), width:'90%', backgroundColor:"#EBF7FF", marginTop : scale(15), alignSelf:"center", flexDirection:'row', justifyContent:'flex-start', alignItems: 'center', borderRadius:scale(5), paddingHorizontal:scale(10)}} 
         >
             <View style={{height:scale(23), width:scale(23), borderWidth:scale(2), borderColor:'#4ca9ee', backgroundColor:'#fff', padding:scale(3)}} >

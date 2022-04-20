@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, FlatList} from 'react-native'
+import {View, Text, FlatList, Share} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { serverConfig } from '../../../../constants/server.constants'
 import { scale } from '../../../../theme/metric'
@@ -33,6 +33,21 @@ class Featured extends React.Component {
         .catch(err => this.setState({ blogs : [] }))
     }
 
+    handleSharePress = async (path, _id) => {
+        try {
+            const result = await Share.share({
+              message : `https://blogs.healthhighway.co.in/mobile/blogs/${path}/${_id}`,
+              title : "Share the blogs with your friends and family"
+            })
+            if (result.action === Share.sharedAction) {
+                MixpanelInstance.track("blog_share")
+            } else if (result.action === Share.dismissedAction) {
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     render(){
 
         return (
@@ -50,6 +65,7 @@ class Featured extends React.Component {
                 renderItem={({item}) => {
                     return (
                         <BlogPreview
+                            handleSharePress={() => this.handleSharePress(item.path, item._id)}
                             thumbnailImage={item.thumbnailImage}
                             author={item.author}
                             authorImage={item.authorImage}
@@ -57,7 +73,7 @@ class Featured extends React.Component {
                             createdAt={item.createdAt}
                             onPress={() => {
                                 MixpanelInstance.track("featured_blog_detail")
-                                this.props.navigation.navigate("BlogDetailScreen")
+                                this.props.navigation.navigate("BlogDetailScreen", { path : item.path, _id : item._id })
                             }}
                         />
                     )

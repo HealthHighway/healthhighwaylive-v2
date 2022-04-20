@@ -20,7 +20,7 @@ const BackHeaderWithTitleCentered = ({showSkip, onSkipPress, showBackBtn, onBack
             </View>
             <View style={{width:scale(50),backgroundColor:backgroundColor?backgroundColor:'transparent', ...styles.rowCenter}} >
                 {showLikeBtn?<TouchableOpacity 
-                    activeOpacity={0.95} 
+                    activeOpacity={0.6} 
                     onPress={() => onLikePress()} 
                     style={{width:scale(40), backgroundColor:'transparent', borderRadius:scale(100), overflow:'hidden', justifyContent:'center', alignItems:'center'}} >
                     <Icon name={isLiked?"favorite":"favorite-border"} size={27} color="#4ca9ee" />
