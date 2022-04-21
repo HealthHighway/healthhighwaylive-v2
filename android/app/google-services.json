@@ -1,0 +1,183 @@
+{
+  "project_info": {
+    "project_number": "716392922291",
+    "firebase_url": "https://healthhighway-45963.firebaseio.com",
+    "project_id": "healthhighway-45963",
+    "storage_bucket": "healthhighway-45963.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716392922291:android:d12096b8a9d3f3a4a544c6",
+        "android_client_info": {
+          "package_name": "com.health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716392922291-806htoemdg8rbvalbsqa7dkqj39rkrra.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.health",
+            "certificate_hash": "d6e3b9cac985884145927f8c57eb2e5f660dd07f"
+          }
+        },
+        {
+          "client_id": "716392922291-r167ims4itenlc11gm7s028t8s4ihj7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.health",
+            "certificate_hash": "3481186129fd3b47bf8eca19b1386a3c39e310b0"
+          }
+        },
+        {
+          "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4JluLiFJ_feqaVkHq8cHpT6KTfmWwkVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716392922291:android:5b2b56432f23b3dca544c6",
+        "android_client_info": {
+          "package_name": "com.healthhighway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716392922291-08r4gu2gnsd387d342r2jj37o1bl0cgq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthhighway",
+            "certificate_hash": "0e5805bed03da9f719a0e783716cd0faaf7f5295"
+          }
+        },
+        {
+          "client_id": "716392922291-fvem9a05keblaelits85jfueviculivc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthhighway",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "716392922291-g0u1qor3n1jrnf5tohb84e60rjir0cbh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthhighway",
+            "certificate_hash": "3481186129fd3b47bf8eca19b1386a3c39e310b0"
+          }
+        },
+        {
+          "client_id": "716392922291-vu8iku17gsepins6budnfl1p5pgedn2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthhighway",
+            "certificate_hash": "d6e3b9cac985884145927f8c57eb2e5f660dd07f"
+          }
+        },
+        {
+          "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4JluLiFJ_feqaVkHq8cHpT6KTfmWwkVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716392922291:android:c398f73a6d2bccb3a544c6",
+        "android_client_info": {
+          "package_name": "com.healthhighwaylive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716392922291-4n461jejblovna3jpcjo9eh0vb96814l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthhighwaylive",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4JluLiFJ_feqaVkHq8cHpT6KTfmWwkVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716392922291:android:e546b716b8225941a544c6",
+        "android_client_info": {
+          "package_name": "com.trainerhh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4JluLiFJ_feqaVkHq8cHpT6KTfmWwkVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716392922291-o1ouumrs98vgie5o83q3je479thj8uub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
